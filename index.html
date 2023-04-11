@@ -1,0 +1,155 @@
+<!DocType html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="HTML, JavaScript">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Descending 4 numbers</title>
+	
+	</head>
+	
+	<body>
+	
+	<section>
+		<form id="form">
+			<label for="one">One :<label>
+			<input type="text" id="one" required><br><br>
+			
+			<label for="two">Two :<label>
+			<input type="text" id="two" required><br><br>
+			
+			<label for="three">Three :<label>
+			<input type="text" id="three" required><br><br>
+			
+			<label for="four">Four :<label>
+			<input type="text" id="four" required><br><br>
+			
+			<button id="btn">Submit</button>
+		</form>
+		
+		<p id="des"></p>
+	</section>
+	
+	<script>
+		var form=document.getElementById("form");
+		var op=document.getElementById("des");
+		
+		form.addEventListener("submit",function(e){
+		e.preventDefault();
+			var a=parseInt(document.getElementById("one").value);
+			var b=parseInt(document.getElementById("two").value);
+			var c=parseInt(document.getElementById("three").value);
+			var d=parseInt(document.getElementById("four").value);
+
+			if(a>b && a>c && a>d){
+				if(b>c && b>d){
+					if(c>d){
+						op.innerText=`Desending order - ${a},${b},${c},${d}`;
+					}
+					else{
+						op.innerText=`Desending order - ${a},${b},${d},${c}`;
+					}
+				}
+				else if(c>d){
+					if(b>d){
+						op.innerText=`Desending order - ${a},${c},${b},${d}`;
+					}
+					else{
+						op.innerText=`Desending order - ${a},${c},${d},${b}`;
+					}
+				}
+				else{
+					if(b>c){
+						op.innerText=`Desending order - ${a},${d},${b},${c}`;
+					}
+					else{
+						op.innerText=`Desending order - ${a},${d},${c},${b}`;
+					}
+				}
+
+			}
+			else if(b>c && b>d){
+				if(a>c && a>d){
+					if(c>d){
+						op.innerText=`Desending order - ${b},${a},${c},${d}`;
+					}
+					else{
+						op.innerText=`Desending order - ${b},${a},${d},${c}`;
+					}
+				}
+				else if(c>d){
+					if(a>d){
+						op.innerText=`Desending order - ${b},${c},${a},${d}`;
+					}
+					else{
+						op.innerText=`Desending order - ${b},${c},${d},${a}`;
+					}
+				}
+				else{
+					if(a>c){
+						op.innerText=`Desending order - ${b},${d},${a},${c}`;
+					}
+					else{
+						op.innerText=`Desending order - ${b},${d},${c},${a}`;
+					}
+				}
+			}
+			else if(c>d){
+				if(a>b && a>d){
+					if(b>d){
+						op.innerText=`Desending order - ${c},${a},${b},${d}`;
+					}
+					else{
+						op.innerText=`Desending order - ${c},${a},${d},${b}`;
+					}
+				}
+				else if(b>d){
+					if(a>d){
+						op.innerText=`Desending order - ${c},${b},${a},${d}`;
+					}
+					else{
+						op.innerText=`Desending order - ${c},${b},${d},${a}`;
+					}
+				}
+				else{
+					if(a>b){
+						op.innerText=`Desending order - ${c},${d},${a},${b}`;
+					}
+					else{
+						op.innerText=`Desending order - ${c},${d},${b},${a}`;
+					}
+				}
+			}
+			else{
+				if(a>b && a>c){
+					if(b>c){
+						op.innerText=`Desending order - ${d},${a},${b},${c}`;
+					}
+					else{
+						op.innerText=`Desending order - ${d},${a},${c},${b}`;
+					}
+				}
+				else if(b>c){
+					if(c>a){
+						op.innerText=`Desending order - ${d},${b},${c},${a}`;
+					}
+					else{
+						op.innerText=`Desending order - ${d},${b},${a},${c}`;
+					}
+				}
+				else{
+					if(b>a){
+						op.innerText=`Desending order - ${d},${c},${b},${a}`;
+					}
+					else{
+						op.innerText=`Desending order - ${d},${c},${a},${b}`;
+					}
+				}
+			}
+		});
+			
+	</script>
+	</body>
+</html>
